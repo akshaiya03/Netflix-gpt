@@ -8,6 +8,8 @@
 - register TMBD and create an app and get access to api key
 -get data from TMBD    
 
+
+
 # FEATURES
 -login/signup(user authentication)
   -movie suggessions
@@ -22,3 +24,4 @@
 -Netflix-Gpt
    -search bar
    -movie suggesions
+
