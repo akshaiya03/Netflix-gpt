@@ -3,8 +3,10 @@ import Browser from "./Browser"
 import { RouterProvider } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
 
-const Body=()=>{
 
+const Body=()=>{
+  
+  
     const appRouter= createBrowserRouter(
         [
          { path:"/",
@@ -17,9 +19,12 @@ const Body=()=>{
       
         ]
       );
+       
     return(
         <div>
+          
             <RouterProvider router={appRouter}/>
+            
         </div>
     )
 }
