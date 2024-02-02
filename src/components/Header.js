@@ -15,7 +15,7 @@ const handleSignout=()=>{
         const auth = getAuth();
 signOut(auth).then(() => {})
 .catch((error) => {
-    
+   
 });
     }
      useEffect(()=>{
@@ -30,6 +30,7 @@ signOut(auth).then(() => {})
             dispatch(removeuser());
             navigate("/")
           }
+          
         });
      return ()=> unsubscribe();
        },[])
