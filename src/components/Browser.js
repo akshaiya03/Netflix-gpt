@@ -6,20 +6,31 @@ import SecondaryContainer from "./SecondaryContainer.js";
 import usePopularMovies from "../hooks/usePopularMovies.js";
 import useTrendingMovies from "../hooks/useTrendingMovies.js";
 import useUpcomingMovies from "../hooks/useUpcomingMovies.js";
-
+import GptSearch from "./GptSearch.js";
+import {  useSelector } from "react-redux";
 
 const Browser=()=>{
-   
+     
+const gptPage= useSelector(store=>store.gpt.ShowGptSearch)
+
  useNowPlayingMovies();
  usePopularMovies();
  useTrendingMovies();
  useUpcomingMovies();
 
     return(
-       <div >
+       <div className="no-scrollbar" >
           <Header/> 
-          <MainContainer/>
-          <SecondaryContainer/>
+          {
+            gptPage ? (<GptSearch/> ) :(
+               <>
+               <MainContainer/>
+              <SecondaryContainer/>
+              </>
+            )
+          }
+          
+          
        
     </div>
     )

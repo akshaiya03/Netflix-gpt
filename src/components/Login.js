@@ -7,7 +7,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import {  updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { adduser } from "../utils/userSlice";
-import { USER_URL } from "../utils/constants";
+import { BG_URL, USER_URL } from "../utils/constants";
 const Login=()=>{
   
   const dispatch=useDispatch();
@@ -87,8 +87,10 @@ const Login=()=>{
     return(
         <div >
            <Header/>
-           <div className="absolute ">
-              <img src="https://assets.nflxext.com/ffe/siteui/vlv3/9134db96-10d6-4a64-a619-a21da22f8999/a449fabb-05e4-4c8a-b062-b0bec7d03085/IN-en-20240115-trifectadaily-perspective_alpha_website_large.jpg"
+           <div className="absolute">
+              <img
+              className="h-screen object-cover md:h-auto"
+              src={BG_URL}
                alt="bg">
               </img>
              
@@ -96,8 +98,8 @@ const Login=()=>{
              
             <form 
             onSubmit={(e)=>e.preventDefault()}
-            className="bg-black absolute text-white w-3/12 m-auto right-0 left-0 p-10 mt-40 opacity-85 rounded-md">
-                <h1 className="text-2xl font-bold">{IsSignInform ? "Sign In" : "Sign Up"}</h1>
+            className="bg-black absolute text-white md:w-3/12 md:m-auto m-12 md:right-0 md:left-0 md:p-10 p-6 mt-44 md:mt-40 opacity-85 rounded-md">
+                <h1 className="md:text-2xl text-xl font-bold">{IsSignInform ? "Sign In" : "Sign Up"}</h1>
                 {!IsSignInform && (<input 
                   type="name"
                   placeholder="Full name"
